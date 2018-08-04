@@ -2,7 +2,7 @@
     Property : value;
 } */
 
-* {
+* {  /* apply to all elements */
     text-align: right;
 }
 
@@ -42,3 +42,14 @@ li{
 #div2 {
     background: plum;
 }
+
+/*
+ .class - select all elements of this class;
+ #id - select all elements by id;
+ element1 element2 - select all element2 which are inside element1;
+ element1 > element2 - select all element2 that have parrent of element1;
+ element1 + element2 - select any element that are exactly after element1;
+ element:hover - changes the style when курсор наводиться на элемент
+ element:last-child - select the last child;
+ element: first-child - select the first child;
+*/
