@@ -29,6 +29,15 @@ p {
     font-family: 'Indie Flower', cursive;  
 }
 
+img {
+    float: left;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+}
+
 li{
     list-style: none;
     display: inline-block;
