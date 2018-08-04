@@ -20,6 +20,13 @@ h2, p {  /* мы можем добавить сразу несколько се�
 
 p {
     color: green;  /*но тут р селектор уже изменит цвет */
+    text-decoration: underline;
+    text-transform: uppercase;
+    line-height: 20px;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 100%;
+    font-family: 'Indie Flower', cursive;  
 }
 
 li{
