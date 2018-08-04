@@ -2,6 +2,10 @@
     Property : value;
 } */
 
+* {
+    text-align: right;
+}
+
 body{
     background-image: url(background.jpg);
     background-size: cover;
