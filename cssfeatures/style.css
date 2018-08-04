@@ -26,3 +26,15 @@ li{
 .webtext {
     border: 5px solid green;
 }
+
+.active {
+    color: red;
+}
+
+#div1 {
+    background: cyan;
+}
+
+#div2 {
+    background: plum;
+}
