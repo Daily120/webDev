@@ -7,7 +7,7 @@ body{
     background-size: cover;
 }
 
-h2 {
+h2, p {  /* мы можем добавить сразу несколько селекторов */
     color: red;
     text-align: center;
     border: 5px dashed purple;
@@ -15,7 +15,7 @@ h2 {
 }
 
 p {
-    color: green;
+    color: green;  /*но тут р селектор уже изменит цвет */
 }
 
 li{
