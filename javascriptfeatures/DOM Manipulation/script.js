@@ -1,7 +1,7 @@
 //returns a list of all elements within h1 tag
 var h1 = document.getElementsByTagName("h1");
 //returns a list of all elements belonging to the class
-var second = document.getElementsByClassName("seccond");
+var second = document.getElementsByClassName("second");
 //returns one element which has the id
 var first = document.getElementById("first");
 //returns the first item what it find by Selector(the same as in CSS)
@@ -23,3 +23,10 @@ var multClasses = document.querySelector("li");
 multClasses.classList.add("element");
 multClasses.classList.remove("element");
 multClasses.classList.toggle("done"); //turns the class on and off
+
+
+//accessing text inside the element
+//first method can handle HTML code
+second[0].innerHTML = "<strong>I have changed you!</strong>";
+//second can't handle HTML code
+second[0].textContent = "I have changed you twice! Now without HTML Code inside.";
