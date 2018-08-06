@@ -30,3 +30,7 @@ multClasses.classList.toggle("done"); //turns the class on and off
 second[0].innerHTML = "<strong>I have changed you!</strong>";
 //second can't handle HTML code
 second[0].textContent = "I have changed you twice! Now without HTML Code inside.";
+
+//parentElement and childrenElement
+parent = document.querySelector('li').parentElement; //parent element of li is ul
+children = document.querySelector('body').children; //list of children of body tag
