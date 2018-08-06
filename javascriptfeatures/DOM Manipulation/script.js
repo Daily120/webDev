@@ -13,3 +13,13 @@ var list = document.querySelectorAll("li, h1");
 document.querySelector('li').getAttribute('random');
 //the same, but set. Sets the value to
 document.querySelector('li').setAttribute('random', 50);
+
+
+//changing className to apply style changes. The style for this class is implemented in CSS file
+var applyStyle = document.querySelector("h1");
+applyStyle.className = "coolTitle";
+//a tag can have multiple classes(class= 'bold red')
+var multClasses = document.querySelector("li");
+multClasses.classList.add("element");
+multClasses.classList.remove("element");
+multClasses.classList.toggle("done"); //turns the class on and off
