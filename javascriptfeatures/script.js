@@ -27,3 +27,15 @@ var functionList = [function apple() {
     console.log("apple");
 }]
 functionList[0]();
+
+//Creating an object
+var user = {
+    name: "John",
+    age: 34,
+    hobby: "Soccer",
+    isMarried: false,
+    shout: function() {
+        console.log("AHHHHHH!");
+    }
+};
+user.favouriteFood = "spinach"; //will add this prorerty to the object
