@@ -5,7 +5,7 @@ function sayHello() {
 sayHello();
 
 //Anonymous Function () => void
-var sayBye = function() {
+var sayBye = function () {
     console.log("Bye");
 }
 sayBye();
@@ -18,7 +18,7 @@ sing("This is America. Don't catch you slippin' up");
 
 //Arrays
 var list = ["tiger", "cat", "bear", "bird"];
-var mixed = [1,2, "522", "Helloooooo"];
+var mixed = [1, 2, "522", "Helloooooo"];
 mixed.forEach(item => {
     console.log(item);
 });
@@ -34,8 +34,23 @@ var user = {
     age: 34,
     hobby: "Soccer",
     isMarried: false,
-    shout: function() {
+    shout: function () {
         console.log("AHHHHHH!");
     }
 };
 user.favouriteFood = "spinach"; //will add this prorerty to the object
+
+//Loops
+for (var i = 0; i < 100; i++) {
+
+}
+
+do {
+
+} while (false) {
+
+}
+
+list.forEach(item => {
+    console.log(item);
+})
