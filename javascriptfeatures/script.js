@@ -79,3 +79,16 @@ function moveCommand(direction) {
     }
     return whatHappens;
 }
+
+//ES5 + ES6
+//let and const
+const player = 'bobby'; //use const if the value of variable should never change.
+let experience = 100;
+let wizardLevel = false;
+
+if (experience > 90) {
+    let wizardLevel = true; //let creates a scope(access level) inside if block
+    console.log("inside", wizardLevel);
+}
+
+console.log("outside", wizardLevel);
