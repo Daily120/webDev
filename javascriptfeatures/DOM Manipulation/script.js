@@ -50,6 +50,10 @@ var ul = document.querySelector("ul");
 function addItemToTheList() {
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(input.value));
+    deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "Delete";
+    deleteButton.setAttribute("onclick", "this.parentNode.parentNode.removeChild(this.parentNode);");
+    li.appendChild(deleteButton);
     ul.appendChild(li);
     input.value = "";
 }
@@ -69,3 +73,12 @@ function addItemAfterEnterPress(event) {
 button.addEventListener("click", addItemAfterClick)
 
 input.addEventListener("keypress", addItemAfterEnterPress)
+
+// exercise
+
+ul.addEventListener("click", function(event) {
+    var listItem = event.explicitOriginalTarget.parentElement;
+    if (!listItem.children[1]){
+        listItem.classList.toggle("done");
+    }
+})
