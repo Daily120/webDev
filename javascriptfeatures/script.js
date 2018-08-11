@@ -82,7 +82,7 @@ function moveCommand(direction) {
 
 //ES5 + ES6
 //let and const
-const player = 'bobby'; //use const if the value of variable should never change.
+//const player = 'bobby'; //use const if the value of variable should never change.
 let experience = 100;
 let wizardLevel = false;
 
@@ -92,3 +92,31 @@ if (experience > 90) {
 }
 
 console.log("outside", wizardLevel);
+
+//Destructuring
+const obj = {
+    player: 'bobby',
+    experience: 100,
+    wizardLevel: false
+};
+
+const { player, experience } = obj; //takes the exact property from an object and assign it to a variable with the same name
+let { wizardLevel } = obj;
+
+//Object properties
+const name = 'john snow';
+
+const obj2 = {
+    [name]: 'hello', //dinamic property name. In this case- john snow
+    [1 + 3]: 'hihi' // 4: 'hihi'
+}
+
+const a = 'Simon';
+const b = true;
+const c = {};
+
+const obj3 = {
+    a, //a: 'Simon'
+    b, //b: true
+    c  //c: {}
+}
