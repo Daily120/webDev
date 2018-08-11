@@ -34,3 +34,10 @@ second[0].textContent = "I have changed you twice! Now without HTML Code inside.
 //parentElement and childrenElement
 parent = document.querySelector('li').parentElement; //parent element of li is ul
 children = document.querySelector('body').children; //list of children of body tag
+
+//Listening to Events
+var button = document.getElementsByTagName("button");
+
+button[0].addEventListener("click", function() {
+    console.log("CLICK!!!");
+})
