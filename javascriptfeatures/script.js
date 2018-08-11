@@ -132,3 +132,15 @@ const greetingBest = `Hello ${name}, you seem to be ${age-10}. What a lovely ${p
 function greet(name='', age=30, pet='cat') {
     return `Hello ${name}, you seem to be ${age-10}. What a lovely ${pet} you have!`;
 }
+
+//Symbol
+let sym1 = Symbol();
+let sym2 = Symbol('foo');
+let sym3 = Symbol('foo'); //sym2 isn't equal to sym3. Symbol creates unic object. Used to eleminate coflicts.
+
+//arrow functions
+const add = (a, b) => a + b; //returns what after fat arrow
+
+const add2 = (a, b) => {
+    //if you want to do more than just return
+}
