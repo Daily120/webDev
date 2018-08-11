@@ -144,3 +144,32 @@ const add = (a, b) => a + b; //returns what after fat arrow
 const add2 = (a, b) => {
     //if you want to do more than just return
 }
+
+//Advanced Functions
+const first = () => {
+    const greet = "Hi";
+    const second = () => {
+        alert(greet);
+    }
+    return second; //returning the function itself(but executing it before)
+}
+
+const newFunc = first(); //newFunc = second func. But is has access to greet argument of its parent function. Magic
+newFunc();
+//Closures - a function ran. The function executed. It's never going to execute again.
+// BUT it's going to remember that there are references to those variables
+// so the child scope always has access to the parent scope.
+
+//Currying
+const multiply = (a, b) => a * b;
+const curriedMultiply = (a) => (b) => a * b;
+curriedMultiply(3)(4); //the way we call such kind of function
+const multiplyBy5 = curriedMultiply(5); //one way of using. Creating specific functions
+multiplyBy5(3);
+
+//Compose
+const compose = (f, g) => (a) => f(g(a)); //f,g-functions; a-argument;
+
+const sum = (num) => num + 1;
+
+compose(sum, sum)(5); //returns 7;     (sum, sum) => (5) => sum(sum(5))
