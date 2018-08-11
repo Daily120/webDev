@@ -36,8 +36,19 @@ parent = document.querySelector('li').parentElement; //parent element of li is u
 children = document.querySelector('body').children; //list of children of body tag
 
 //Listening to Events
-var button = document.getElementsByTagName("button");
+// var button = document.getElementsByTagName("button");
 
-button[0].addEventListener("click", function() {
-    console.log("CLICK!!!");
+// button[0].addEventListener("click", function() {
+//     console.log("CLICK!!!");
+// })
+
+//Shopping List
+var button = document.getElementById("enter");
+var input = document.getElementById("userinput");
+var ul = document.querySelector("ul");
+
+button.addEventListener("click", function() {
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(input.value));
+    ul.appendChild(li);
 })
