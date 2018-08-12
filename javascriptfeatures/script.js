@@ -189,3 +189,27 @@ const reduceArray = array.reduce((accumulator, num) => { //accumulates the resul
     return accumulator + num;
 }, 0); // 0 is the starting value of accumulator(can be any)
 //will return sum of all elements in array
+
+//Class
+class Player {
+    constructor(name, type) {
+        this.name = name;
+        this.type = type;
+    }
+    //method
+    introduce() {
+        console.log(`Hi, I am ${this.name}. I am a ${this.type}`);
+    }
+}
+//Inheritance
+class Wizard extends Player {
+    constructor(name, type) {
+        super(name, type); //base class constructor
+    }
+    play() {
+        console.log(`WHEEEE, I'm a ${this.type}`);
+    }
+}
+
+const wizard1 = new Wizard('Shelly', 'Healer');
+const wizard2 = new Wizard('Shawn', 'Dark Magic');
