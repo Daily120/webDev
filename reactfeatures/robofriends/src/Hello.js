@@ -7,7 +7,7 @@ class Hello extends Component {
         return (
             <div id="parent" className='f1 tc'>
                 <h1>Hello React!</h1>
-                <p>Welcome to the world of Front-end.</p>
+                <p>{this.props.greeting}</p>
             </div>
         );
     }
