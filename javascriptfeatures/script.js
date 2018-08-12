@@ -173,3 +173,19 @@ const compose = (f, g) => (a) => f(g(a)); //f,g-functions; a-argument;
 const sum = (num) => num + 1;
 
 compose(sum, sum)(5); //returns 7;     (sum, sum) => (5) => sum(sum(5))
+
+//Advanced Arrays
+//Map - itterate through each element of array and do what is defined in function. After returns an array with results.
+const array = [1, 2, 10, 16];
+const mapArray = array.map((num) => {
+    return num * 2;
+});
+
+//filter
+const filterArray = array.filter(num => num > 5); //if num > 5, return num
+
+//reduce
+const reduceArray = array.reduce((accumulator, num) => { //accumulates the result in accumulator
+    return accumulator + num;
+}, 0); // 0 is the starting value of accumulator(can be any)
+//will return sum of all elements in array
