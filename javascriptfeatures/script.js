@@ -213,3 +213,12 @@ class Wizard extends Player {
 
 const wizard1 = new Wizard('Shelly', 'Healer');
 const wizard2 = new Wizard('Shawn', 'Dark Magic');
+
+//ES7
+//incluses
+'Helooooo'.includes('o'); //returns true
+const pets = ['cat', 'dog', 'bat'];
+pets.includes('dog');
+
+//Math.power as **
+const square = (x) => x**2;
