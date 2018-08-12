@@ -222,3 +222,9 @@ pets.includes('dog');
 
 //Math.power as **
 const square = (x) => x**2;
+
+//ES8
+'Turtle'.padStart(10); //returns '10 spaces Turtle'
+'Turtle'.padEnd(10); //returns 'Turtle 10 spaces'
+
+Object.entries(obj); //each object property is in array. [key, value]
