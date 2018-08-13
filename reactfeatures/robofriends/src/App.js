@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox'
-import { robots } from './robots' //destructuring, because export was not default
+//import { robots } from './robots' //destructuring, because export was not default
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
-            robots: robots,
+            robots: [],
             searchField: ''
         }
+    }
+
+    componentDidMount() { //lifecycle method.
+        fetch('https://jsonplaceholder.typicode.com/users') //downloading a file
+        .then((responce) => responce.json())//converting to json
+        .then(jsonFile => this.setState({ robots: jsonFile }));
     }
 
     onSearchChange = (event) => { //when you make your own method in react. it should look like this
