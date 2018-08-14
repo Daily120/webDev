@@ -237,4 +237,28 @@ const promise = new Promise((resolve, reject) => {
         reject('Error, it broke');
     }
 });
-promise.then(result => console.log(result));
+
+const promise2 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'Helooooo')
+});
+
+const promise3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, 'Pop-Corn')
+});
+
+const promise4 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 3000, 'Is it me are you looking for?')
+});
+
+promise
+    .then(result => {
+        throw Error
+        result + '!'
+    })
+    .then(result2 => console.log(result2))
+    .catch(() => console.log('error!')); //.catch catches any error happening in promise before .catch
+
+Promise.all([promise, promise2, promise3, promise4]) //it is waiting until all the promises get the result, and then runs the logic inside
+    .then(values => {
+        console.log(values);
+    })
