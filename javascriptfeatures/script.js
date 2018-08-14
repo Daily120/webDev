@@ -229,7 +229,7 @@ const square = (x) => x**2;
 
 Object.entries(obj); //each object property is in array. [key, value]
 
-//New feature in ES6 - Promises. Used instead of callbacks
+//New feature in ES6 - Promises. Used instead of callbacks. I promise to return something to ypu un the future
 const promise = new Promise((resolve, reject) => {
     if (true) {
         resolve('Suff Worked');
@@ -279,3 +279,29 @@ Promise.all(urls.map(url => {
     console.log(results[1]);
     console.log(results[2]);
 }).catch(() => console.log('error'));
+
+//Async Await - based on promises
+
+async function fetchUsers() {
+    const responce = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await responce.json(); //await - pause execution until this function is not done
+    console.log(data);
+}
+//the same fetchUsers function with simple promises
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(resp=> resp.json())
+    .then(data => console.log(data))
+
+// More realistic scenario
+const getData = async function() {
+    try {
+        const [ users, posts, albums ] = await Promise.all(urls.map(url => {
+            return fetch(url).then(responce => responce.json())
+        }));
+        console.log('users', users);
+        console.log('posts', posts);
+        console.log('albums', albums);
+    } catch(err) {
+        console.log('oops!', err);
+    }
+}
