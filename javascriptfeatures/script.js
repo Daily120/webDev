@@ -228,3 +228,13 @@ const square = (x) => x**2;
 'Turtle'.padEnd(10); //returns 'Turtle 10 spaces'
 
 Object.entries(obj); //each object property is in array. [key, value]
+
+//New feature in ES6 - Promises. Used instead of callbacks
+const promise = new Promise((resolve, reject) => {
+    if (true) {
+        resolve('Suff Worked');
+    } else {
+        reject('Error, it broke');
+    }
+});
+promise.then(result => console.log(result));
