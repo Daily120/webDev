@@ -262,3 +262,20 @@ Promise.all([promise, promise2, promise3, promise4]) //it is waiting until all t
     .then(values => {
         console.log(values);
     })
+
+//real-world example
+const urls = [
+    'https://jsonplaceholder.typicode.com/users',
+    'https://jsonplaceholder.typicode.com/posts',
+    'https://jsonplaceholder.typicode.com/albums'
+]
+
+//the page needs all links to be fetched before rendering
+Promise.all(urls.map(url => {
+    return fetch(url).then(responce => responce.json())
+}))
+.then(results => {
+    console.log(results[0]);
+    console.log(results[1]);
+    console.log(results[2]);
+}).catch(() => console.log('error'));
