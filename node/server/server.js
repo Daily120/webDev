@@ -2,6 +2,12 @@ const express = require('express');
 
 const app = express();
 
+//Express midleware
+app.use((req, res, next) => {
+    console.log("I am called before everyone, when request comes in");
+    next();
+})
+
 //get request app.post for POST
 app.get('/', (req, res) => {
     const user = {
