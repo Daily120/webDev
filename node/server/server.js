@@ -1,17 +1,14 @@
-const http = require('http');
+const express = require('express');
 
-const server = http.createServer((request, response) => {
-    console.log(request.headers);
-    console.log(request.method);
-    console.log(request.url);
+const app = express();
 
+//get request app.post for POST
+app.get('/', (req, res) => {
     const user = {
-        name: 'John',
-        hobby: 'Skating'
+        name: 'Sally',
+        hobby: 'soccer'
     }
-
-    response.setHeader('Content-Type', 'application/json');
-    response.end(JSON.stringify(user));
+    res.send(user); //automaticly does JSON.stringify and adds application/json in headers
 });
 
-server.listen(3000);
+app.listen(3000);
