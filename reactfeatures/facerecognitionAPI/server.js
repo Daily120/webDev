@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt-nodejs');
 
 const app = express();
 
@@ -31,8 +32,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/signin', (req, res) => {
-    if (req.body.email === database.users[0].email &&
-        req.body.password === database.users[0].password) {
+    if (req.body.email === database.users[2].email &&
+        bcrypt.compareSync(req.body.password, database.users[2].password)) {
             res.json('Success')
         } else {
             res.status(400).json('error logging in')
@@ -41,11 +42,12 @@ app.post('/signin', (req, res) => {
 
 app.post('/register', (req, res) => {
     const { email, name, password } = req.body;
+    const hash = bcrypt.hashSync(password);
     database.users.push({
         id: '125',
         name: name,
         email: email,
-        password: password,
+        password: hash,
         entries: 0,
         joined: new Date()
     });
