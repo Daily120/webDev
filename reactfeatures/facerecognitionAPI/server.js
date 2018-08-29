@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 app.post('/signin', (req, res) => {
     if (req.body.email === database.users[2].email &&
         bcrypt.compareSync(req.body.password, database.users[2].password)) {
-            res.json('Success')
+            res.json(database.users[2]);
         } else {
             res.status(400).json('error logging in')
         }
