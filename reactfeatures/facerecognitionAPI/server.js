@@ -14,10 +14,6 @@ const db = knex({
     }
 })
 
-db.select('*').from('users').then(data => {
-    console.log(data);
-})
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -83,16 +79,9 @@ app.post('/register', (req, res) => {
 
 app.get('/profile/:id', (req, res) => {
     const { id } = req.params;
-    let found = false;
-    database.users.forEach(user => {
-        if (user.id === id) {
-            found = true;
-            res.json(user);
-        }
-    })
-    if(!found) {
-        res.status(404).json('no such user');
-    }
+    db.select('*').from('users').where({id}) //ES6 syntax=== where({id: id})
+        .then(user => user[0] ? res.json(user[0]) : res.status(400).json('Not found'))
+        .catch(err => res.status(400).json('error getting user'))
 })
 
 app.put('/image', (req, res) => {
