@@ -89,6 +89,9 @@ class App extends Component {
                 body: JSON.stringify({id: this.state.user.id})
             })
             this.displayFaceBox(this.calculateFaceLocation(response));
+            this.setState(state => {
+                return state.user.entries++;
+            });
         })
         .catch(err => console.log(err));
     }
